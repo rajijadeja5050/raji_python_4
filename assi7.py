@@ -1,5 +1,7 @@
+# Explain what does django-admin.py make messages command is used for?
+
 '''
-Write a Python program to count the number of strings where the string
-length is 2 or more and the first and last character are same from a given
-list of strings.
+makemessages. Runs over the entire source tree of the current directory and pulls
+out all strings marked for translation. It creates (or updates) a message file in the
+conf/locale(in the Django tree) or locale (for project and application) directory.
 '''

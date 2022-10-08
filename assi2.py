@@ -1,5 +1,7 @@
-# How will you remove last object from a list?
+# How to check installed version of django?
 
-l=[5,8,'good','python',1,'tops']
-l.pop()
-print(l)
+'''
+Simply type python -m django --version or type pip freeze to see all the versions
+of installed modules including Django.
+
+'''

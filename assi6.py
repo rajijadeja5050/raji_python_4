@@ -1,9 +1,7 @@
-#  How will you compare two lists?
+# Mention what command line can be used to load data into Django?
 
-list1=[44,1,67,38,94,61]
-list2=[5,1,17,38,52,61,0]
-
-if list1==list2:
-    print("equal lists")
-else:
-    print("not equal lists")
+'''
+To load data into Django you have to use the command line Django-admin.py loaddata.
+The command line will searches the data and loads the contents of the named fixtures into
+the database.
+'''

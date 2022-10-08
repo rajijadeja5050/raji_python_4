@@ -1,5 +1,7 @@
-# Suppose list1 is [2, 33, 222, 14, and 25], what is list1 [-1]?
+# Explain what does django-admin.py make messages command is used for?
 
-list1=[2, 33, 222, 14, 25]
-
-print(list1[-1])
+'''
+makemessages. Runs over the entire source tree of the current directory and pulls
+out all strings marked for translation. It creates (or updates) a message file in the
+conf/locale(in the Django tree) or locale (for project and application) directory.
+'''

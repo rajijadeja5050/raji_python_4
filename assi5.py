@@ -1,15 +1,14 @@
-'''
-Write a Python function to get the largest number, smallest num and sum
-of all from a list.
-'''
-l=[]
-num=int(input("how many elements to put in list: "))
-total=0
+# What is a QuerySet?Write program to create a new Post object in database:
 
-for i in range(0,num):
-    number=int(input("enter element: "))
-    l.append(number)
-    total=total+number
-print("maximum number",max(l))
-print("maximum number",min(l))
-print("sum of all elements in list=",total)
+'''
+A QuerySet represents a collection of objects from your database. It can have zero, one or
+many filters. Filters narrow down the query results based on the given parameters.
+In SQL terms, a QuerySet equates to a SELECT statement, and a filter is a limiting clause such
+as WHERE or LIMIT.
+
+dataBase = mysql.connector.connect(
+  host ="localhost",
+  user ="user",
+  password =""
+)
+'''

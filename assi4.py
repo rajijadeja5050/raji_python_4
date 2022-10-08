@@ -1,21 +1,13 @@
-# Differentiate between append () and extend () methods?
+# What is Django URLs?make program to create django urls
 
 '''
-Python append() method adds an element to a list,
-and the extend() method concatenates the first list with another list.
+It is a function that takes a full Python import path to another URLconf module that should
+be "included" in this place.
+It is used for registering a converter for use in path() routes.
+
+from django. urls import include,
+path urlpatterns = [
+path('index/', views. index, name='main-view'),
+
+path('bio/<username>/', views. bio, name='bio'), path('articles/<slug:title>/', views.
 '''
-
-a=[55,"tops",22,True,"python"]
-b=[66,"raji",5050,"ahemdabad"]
-
-a.append(b)
-print(a)
-
-print("*"*50)
-
-a=[55,"tops",22,True,"python"]
-b=[66,"raji",5050,"ahemdabad"]
-
-a.extend(b)
-print(a)
-

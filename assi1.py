@@ -1,13 +1,10 @@
-# What is List? How will you reverse a list?
-'''
-A list is a data structure in Python that is a mutable,
-or changeable, ordered sequence of elements.
+#  Why Django should be used for web-development? Explain how you
+# can create a project in Django?
 
-Using the reverse() method  can reverse the contents of the list object in-place
-i.e., do not need to create a new list instead  just copy the existing
-elements to the original list in reverse order. This method directly modifies
-the original list.
+'''
+Django is the best framework for web applications, as it allows developers to use modules for
+faster development. As a developer, you can make use of these modules to create apps,
+websites from an existing source. It speeds up the development process greatly, as you do
+not have to code everything from scratch.
 '''
 
-l=(1,5,'raji',True,'python')
-print(list(reversed(l)))
