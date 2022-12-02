@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+    
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    {% if request.session.email %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    {% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    {% endif %}
+     
+  </div>
+</nav>
+ <a href="{% url 'adduser' %}"> Click Here For Add Data </a>    
+<br><br>
+
+WELCOME
+<br><br>
+<table border="5" width="100%">
+	<tr>
+		<th>SR.NO</th>
+		<th>NAME</th>
+		<th>EMAIL</th>
+		<th>SUBJECT</th>
+    <th>GENDER</th>
+		<th>CITY</th>
+    <th>ADDRESS</th>
+		<th>ACTION</th>
+	</tr>
+  {% for i in users %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.subject}}</td>
+      <td>{{i.gender}}</td>
+      <td>{{i.city}}</td>
+      <td>{{i.address}}</td>
+      <td>
+        <form>
+          <a href="{% url 'edit' pk=i.pk %}"><input type="button" value="EDIT" class="btn btn-primary"></a>
+          <a href="{% url 'delete' pk=i.pk %}"><input type="button" value="DELETE" class="btn btn-danger"></a>
+        </form>
+       </td>
+    </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		tr,td{
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	{% if msg %}
+	<b style="=color:blue; text-align: center;">{{msg}}</b>
+	{% endif %}
+	<form name="frm" method="post" action="{% url 'adduser' %}">
+			{% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female
+				</td>
+			</tr>
+			<tr>
+				<td>Subject</td>
+				<td>
+					<input type="checkbox" name="subject" value="python">Python<br>
+					<input type="checkbox" name="subject" value="android">Android<br>
+					<input type="checkbox" name="subject" value="php">PHP<br>
+					<input type="checkbox" name="subject" value="java">Java<br>
+					<input type="checkbox" name="subject" value="dotnet">Dotnet<br>
+				</td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td>
+					<select name="city">
+						<option value="Junagadh">Junagadh</option>
+						<option value="Ahemdabad">Ahemdabad</option>
+						<option value="Surat">Surat</option>
+						<option value="Vapi">Vapi</option>
+						<option value="Porbandar">Porbandar</option>
+						<option value="Baroda">Baroda</option>
+						<option value="Gandhinagar">Gandhinagar</option>	
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><textarea rows="5" cols="22" name="address"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input class="btn btn-primary" type="submit" name="action" value="SUBMIT">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

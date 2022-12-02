@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css">
+    tr,td{
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  {% if msg %}
+  <b style="=color:blue; text-align: center;">{{msg}}</b>
+  {% endif %}
+  <form name="frm" method="post" action="{% url 'edit' pk=user.pk %}">
+      {% csrf_token %}
+    <table align="center">
+      <tr>
+        <td>Name</td>
+        <td><input type="text" name="name" value="{{user.name}}"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="text" name="email" value="{{user.email}}"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          {% if user.gender == "male" %}
+            <input type="radio" name="gender" value="male" checked>Male
+            <input type="radio" name="gender" value="female">Female
+          {% elif user.gender == "female" %}
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female" checked>Female
+          {% else %}
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="female">Female
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>Subject</td>
+        <td>
+          {% if user.subject == " python" %}
+            <input type="checkbox" name="subject" value="python" checked>Python<br>
+          {% else %}
+            <input type="checkbox" name="subject" value="python">Python<br>
+          {% endif %}
+
+          {% if user.subject == "android" %}
+          <input type="checkbox" name="subject" value="android"checked>Android<br>
+          {% else %}
+          <input type="checkbox" name="subject" value="android">Android<br>
+          {% endif %}
+
+          {% if user.subject == "php" %}
+          <input type="checkbox" name="subject" value="php" checked>PHP<br>
+          {% else %}
+          <input type="checkbox" name="subject" value="php">PHP<br>
+          {% endif %}
+          
+          {% if user.subject == "java" %}
+          <input type="checkbox" name="subject" value="java" checked>Java<br>
+          {% else %}
+          <input type="checkbox" name="subject" value="java">Java<br>
+          {% endif %}
+          
+          {% if user.subject == "dotnet" %}
+          <input type="checkbox" name="subject" value="dotnet" checked>Dotnet<br>
+          {% else %}
+          <input type="checkbox" name="subject" value="dotnet">Dotnet<br>
+          {% endif %}
+          
+        </td>
+      </tr>
+      <tr>
+        <td>City</td>
+        <td>
+          <select name="city">
+            {% if user.city == "Junagadh" %}
+              <option value="Junagadh" selected>Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% elif user.city == "Ahemdabad" %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad" selected>Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% elif user.city == "Surat" %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat" selected>Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% elif user.city == "Vapi" %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi" selected>Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% elif user.city == "Porbandar" %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar" selected>Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% elif user.city == "Baroda" %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda" selected>Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% elif user.city == "Gandhinagar" %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar" selected>Gandhinagar</option>  
+            {% else %}
+              <option value="Junagadh">Junagadh</option>
+              <option value="Ahemdabad">Ahemdabad</option>
+              <option value="Surat">Surat</option>
+              <option value="Vapi">Vapi</option>
+              <option value="Porbandar">Porbandar</option>
+              <option value="Baroda">Baroda</option>
+              <option value="Gandhinagar">Gandhinagar</option>  
+            {% endif %}
+            
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td><textarea rows="5" cols="22" name="address">{{user.address}}</textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input class="btn btn-primary" type="submit" name="action" value="Update">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
